@@ -23,36 +23,23 @@ Open Android Studio and create a new project from the just downloaded source.
 
 Open `gradle.build` in Android Studio and run the app on an emulator or directly on a device.
 
-## Steps for read and write access (recommended)
 
-Step 1: Install the [Contentful CLI](https://www.npmjs.com/package/contentful-cli)
-
-Step 2: Login to Contentful through the CLI. It will help you to create a [free account](https://www.contentful.com/sign-up/) if you don't have one already.
-
+## License
 ```
-contentful login
-```
+Copyright 2022 The Android Open Source Project
 
-Step 3: Create a new space
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-```
-contentful space create --name 'game app'
-```
+    https://www.apache.org/licenses/LICENSE-2.0
 
-Step 4: Seed the new space with the content model. Replace the `SPACE_ID` with the id returned from the create command executed in step 3
-
-```
-contentful space seed -s '<SPACE_ID>' -t the-example-app
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 ```
 
-Step 5: Head to the Contentful web app's API section and grab `SPACE_ID`, `DELIVERY_ACCESS_TOKEN`, `PREVIEW_ACCESS_TOKEN`.
-
-Step 6: Open <a href="app/build.gradle">app/build.gradle</a> and inject your credentials so it looks like this
-
-```
-buildConfigField("String", "CONTENTFUL_DELIVERY_TOKEN", "\"DELIVERY_TOKEN\"")
-buildConfigField("String", "CONTENTFUL_PREVIEW_TOKEN", "\"PREVIEW_TOKEN\"")
-buildConfigField("String", "CONTENTFUL_SPACE_ID", "\"SPACE_ID\"")
-```
 
 <b>Enjoy exploring the app and feel free to leave <a href="https://github.com/anshitmishra/rock-paper-scissor-app/issues/new">feedback</a>.</b>
